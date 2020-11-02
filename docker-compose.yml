@@ -1,0 +1,67 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: ppl
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: meateria-be
+    container_name: meateria-be-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - meateria-be
+  db:
+    image: mysql:5.7
+    container_name: meateria-be-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: meateria-be
+      MYSQL_ROOT_PASSWORD: meateria-be
+      MYSQL_PASSWORD: meateria-be
+      MYSQL_USER: meateria-be
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - meateria-be
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: meateria-be-nginx
+    restart: unless-stopped
+    ports:
+      - 40003:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - meateria-be
+  pma:
+    image: phpmyadmin/phpmyadmin:4.9
+    container_name: meateria-be-pma
+    hostname: meateria-be-pma
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+    ports:
+      - 40004:80
+    networks:
+      - meateria-be
+  postwoman:
+    image: liyasthomas/postwoman:v1.9.7
+    container_name: meateria-be-postwoman
+    ports:
+      - "40005:3000"
+    networks:
+      - meateria-be
+
+networks:
+  meateria-be:
+    driver: bridge
