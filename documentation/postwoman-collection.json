@@ -1,0 +1,82 @@
+[
+  {
+    "name": "API Endpoints",
+    "folders": [
+      {
+        "name": "Auth",
+        "requests": [
+          {
+            "url": "http://127.0.0.1:40003",
+            "path": "/api/register",
+            "method": "POST",
+            "auth": "None",
+            "httpUser": "",
+            "httpPassword": "",
+            "passwordFieldType": "password",
+            "bearerToken": "",
+            "headers": [],
+            "params": [],
+            "bodyParams": [
+              {
+                "key": "login",
+                "value": "sherlock@holmes.com"
+              },
+              {
+                "key": "password",
+                "value": "IamSHERlock"
+              },
+              {
+                "key": "login",
+                "value": "sherlock"
+              }
+            ],
+            "rawParams": "{}",
+            "rawInput": false,
+            "contentType": "application/json",
+            "requestType": "",
+            "preRequestScript": null,
+            "testScript": null,
+            "name": "Register",
+            "collection": 0,
+            "folder": 0
+          },
+          {
+            "url": "http://127.0.0.1:40003",
+            "path": "/api/login",
+            "method": "POST",
+            "auth": "None",
+            "httpUser": "",
+            "httpPassword": "",
+            "passwordFieldType": "password",
+            "bearerToken": "",
+            "headers": [],
+            "params": [],
+            "bodyParams": [
+              {
+                "key": "login",
+                "value": "sherlock@holmes.com"
+              },
+              {
+                "key": "password",
+                "value": "IamSHERlock"
+              },
+              {
+                "key": "login",
+                "value": "sherlock"
+              }
+            ],
+            "rawParams": "{}",
+            "rawInput": false,
+            "contentType": "application/json",
+            "requestType": "",
+            "preRequestScript": null,
+            "testScript": null,
+            "name": "Login",
+            "collection": 0
+          }
+        ]
+      }
+    ],
+    "requests": []
+  }
+]
