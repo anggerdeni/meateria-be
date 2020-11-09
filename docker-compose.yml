@@ -14,7 +14,7 @@ services:
     volumes:
       - ./:/var/www
     networks:
-      - meateria-be
+      - meateria
   db:
     image: mysql:5.7
     container_name: meateria-be-db
@@ -29,7 +29,7 @@ services:
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
-      - meateria-be
+      - meateria
   nginx:
     image: nginx:1.17-alpine
     container_name: meateria-be-nginx
@@ -40,7 +40,7 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d
     networks:
-      - meateria-be
+      - meateria
   pma:
     image: phpmyadmin/phpmyadmin:4.9
     container_name: meateria-be-pma
@@ -53,15 +53,15 @@ services:
     ports:
       - 40004:80
     networks:
-      - meateria-be
+      - meateria
   postwoman:
     image: liyasthomas/postwoman:v1.9.7
     container_name: meateria-be-postwoman
     ports:
       - "40005:3000"
     networks:
-      - meateria-be
+      - meateria
 
 networks:
-  meateria-be:
+  meateria:
     driver: bridge
