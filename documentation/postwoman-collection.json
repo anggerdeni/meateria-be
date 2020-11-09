@@ -54,24 +54,50 @@
             "bodyParams": [
               {
                 "key": "login",
-                "value": "sherlock@holmes.com"
+                "value": "sherlock"
               },
               {
                 "key": "password",
                 "value": "IamSHERlock"
-              },
-              {
-                "key": "login",
-                "value": "sherlock"
               }
             ],
             "rawParams": "{}",
             "rawInput": false,
             "contentType": "application/json",
             "requestType": "",
-            "preRequestScript": null,
+            "preRequestScript": "pw.env.set('user_token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDkzOTJkZjNiNzgwN2YxMTM5ZWE5Mzc5NzdkZjNkMGI1ZjNkMGEzOTc1M2M2NzJmNDZhNGZiZmE4YzQ3MWE0Y2M4MDFmMGQzZDFkODUxYzUiLCJpYXQiOjE2MDQ4OTk2MjksIm5iZiI6MTYwNDg5OTYyOSwiZXhwIjoxNjM2NDM1NjI5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.PjQR-o2NmZQyyQou8cob2tEoCCJuFgpZAvoZF21cIpeDdAZyzXOfS_XWkeqFG-_G1XcTXFRO3FouzWcxi7T7W7HtzuB8HiLJyBxr9tQ-1bZ0BPXoykb8V5gF2eii_we1W64jJTfRYWiA5l6SkAWThmfJyOnVvnR6NL5qzW6580yuY_g3ef9wlyxpRjayys3q74Iv2T-J1MMPYWkz5apK7UwsQeqB6bMNi4BNPCCnhNqAEYjjdtNkvzsE3rYsZNI5RNYmwDFkR_pITOuJ4k2OBcTQLm89L3ytdzagjjwUSV3vhutl15LHCbFmPVJLdWofjuzCx6mRRZRmnO3uU3P78awSj3CnZcnE6AD45Rl_JrvzOVmxeuHTXZf92PMUOOSMEy0LBUcmrjrvJHNq-WbchkRi-YNuwe5PYSwgo95hseP06U2nba3EhZJkjqkM2FeNkD5xIofJ-Okcv9ouK8JxC4-AKtyL4ktn8CO7djABRN8Z2sIL1Nfugu5Q5Ig6aj9wFeSe5rJMlI9AGnfWBNt_uVXPU3soRpe5FXkQfd9jdJ1ZlgXD27MW3A784MiKxFtmJefpCEKP0BluogNO4tYBXTGmHmTa6jlL8dNuNINepcfEfkF9FIQypNmVYYMdYPxv-QJyLZ0CTkrs_WL2-ByGeVZefP8YeKvlg0NzFGDG6hg');\n",
             "testScript": null,
             "name": "Login",
+            "collection": 0
+          },
+          {
+            "url": "http://127.0.0.1:40003",
+            "path": "/api/user",
+            "method": "GET",
+            "auth": "Bearer Token",
+            "httpUser": "",
+            "httpPassword": "",
+            "passwordFieldType": "password",
+            "bearerToken": "<<user_token>>",
+            "headers": [],
+            "params": [],
+            "bodyParams": [
+              {
+                "key": "login",
+                "value": "sherlock"
+              },
+              {
+                "key": "password",
+                "value": "IamSHERlock"
+              }
+            ],
+            "rawParams": "",
+            "rawInput": true,
+            "contentType": "",
+            "requestType": "",
+            "preRequestScript": "pw.env.set('user_token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDkzOTJkZjNiNzgwN2YxMTM5ZWE5Mzc5NzdkZjNkMGI1ZjNkMGEzOTc1M2M2NzJmNDZhNGZiZmE4YzQ3MWE0Y2M4MDFmMGQzZDFkODUxYzUiLCJpYXQiOjE2MDQ4OTk2MjksIm5iZiI6MTYwNDg5OTYyOSwiZXhwIjoxNjM2NDM1NjI5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.PjQR-o2NmZQyyQou8cob2tEoCCJuFgpZAvoZF21cIpeDdAZyzXOfS_XWkeqFG-_G1XcTXFRO3FouzWcxi7T7W7HtzuB8HiLJyBxr9tQ-1bZ0BPXoykb8V5gF2eii_we1W64jJTfRYWiA5l6SkAWThmfJyOnVvnR6NL5qzW6580yuY_g3ef9wlyxpRjayys3q74Iv2T-J1MMPYWkz5apK7UwsQeqB6bMNi4BNPCCnhNqAEYjjdtNkvzsE3rYsZNI5RNYmwDFkR_pITOuJ4k2OBcTQLm89L3ytdzagjjwUSV3vhutl15LHCbFmPVJLdWofjuzCx6mRRZRmnO3uU3P78awSj3CnZcnE6AD45Rl_JrvzOVmxeuHTXZf92PMUOOSMEy0LBUcmrjrvJHNq-WbchkRi-YNuwe5PYSwgo95hseP06U2nba3EhZJkjqkM2FeNkD5xIofJ-Okcv9ouK8JxC4-AKtyL4ktn8CO7djABRN8Z2sIL1Nfugu5Q5Ig6aj9wFeSe5rJMlI9AGnfWBNt_uVXPU3soRpe5FXkQfd9jdJ1ZlgXD27MW3A784MiKxFtmJefpCEKP0BluogNO4tYBXTGmHmTa6jlL8dNuNINepcfEfkF9FIQypNmVYYMdYPxv-QJyLZ0CTkrs_WL2-ByGeVZefP8YeKvlg0NzFGDG6hg');\n",
+            "testScript": null,
+            "name": "User Detail",
             "collection": 0
           }
         ]
