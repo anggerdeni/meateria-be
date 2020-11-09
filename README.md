@@ -17,9 +17,10 @@ This repository contains laravel-based back-end source code for Meateria Project
 5. Enter `meateria-be-app` container using command `docker exec -it meateria-be-app bash`
 6. Install all dependency using command `composer install`
 7. Migrate the database `php artisan migrate:fresh --seed`
-8. Exit the container (Ctrl+D) or just close the terminal
-9. Test if app is running on [localhost:40003](http://localhost:40003)
-10. To stop the containers, simpy type  
+8. Passport, generate access token: `php artisan passport:install`
+9. Exit the container (Ctrl+D) or just close the terminal
+10. Test if app is running on [localhost:40003](http://localhost:40003)
+11. To stop the containers, simpy type  
     `docker-compose down`
 
 ### running the containers
