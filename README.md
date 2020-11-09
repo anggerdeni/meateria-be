@@ -38,12 +38,12 @@ TODO
 # Contributor
 <table>
 <tr>
-<td align="center"><img src="https://i.ibb.co/hgJzWkq/circle-cropped.png" width="100px;" alt="Ganjar Muhammad Parikesit"/><br /><sub><b>Alfa</b></sub></a><br /></td>
-<td align="center"><img src="https://i.ibb.co/hgJzWkq/circle-cropped.png" width="100px;" alt="Ganjar Muhammad Parikesit"/><br /><sub><b>Amarilis</b></sub></a><br /></td>
-<td align="center"><img src="https://i.ibb.co/hgJzWkq/circle-cropped.png" width="100px;" alt="Ganjar Muhammad Parikesit"/><br /><sub><b>Ganjar</b></sub></a><br /></td>
-<td align="center"><img src="https://i.ibb.co/hgJzWkq/circle-cropped.png" width="100px;" alt="Ganjar Muhammad Parikesit"/><br /><sub><b>Novian</b></sub></a><br /></td>
-<td align="center"><img src="https://i.ibb.co/hgJzWkq/circle-cropped.png" width="100px;" alt="Ganjar Muhammad Parikesit"/><br /><sub><b>Retno</b></sub></a><br /></td>
-<td align="center"><img src="https://i.ibb.co/hgJzWkq/circle-cropped.png" width="100px;" alt="Ganjar Muhammad Parikesit"/><br /><sub><b>Rizaldi</b></sub></a><br /></td>
+<td align="center"><img src="https://avatars.githubusercontent.com/RieGan" width="100px;" alt="Ganjar Muhammad Parikesit" style="border-radius:50%"/><br /><sub><b>Ganjar</b></sub></a><br /></td>
+<td align="center"><img src="https://avatars.githubusercontent.com/alfanadhya" width="100px;" alt="Alfa Nadhya Maimanah" style="border-radius:50%"/><br /><sub><b>Alfa</b></sub></a><br /></td>
+<td align="center"><img src="https://avatars.githubusercontent.com/anggerdeni" width="100px;" alt="Novian Deny Cahyo Aji" style="border-radius:50%"/><br /><sub><b>Novian</b></sub></a><br /></td>
+<td align="center"><img src="https://avatars.githubusercontent.com/amariliskm" width="100px;" alt="Amarilis Khairina Mardhiyah" style="border-radius:50%"/><br /><sub><b>Amarilis</b></sub></a><br /></td>
+<td align="center"><img src="https://avatars.githubusercontent.com/retnowati411" width="100px;" alt="Retno Wati" style="border-radius:50%"/><br /><sub><b>Retno</b></sub></a><br /></td>
+<td align="center"><img src="https://avatars.githubusercontent.com/rzldiprsty" width="100px;" alt="Ganjar Muhammad Parikesit" style="border-radius:50%"/><br /><sub><b>Rizaldi</b></sub></a><br /></td>
 </tr>
 </table>
 
