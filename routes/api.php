@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\RegisterController;
 use App\Http\Controllers\api\LoginController;
+use App\Http\Controllers\api\UserController;
+use App\Http\Resources\User as UserResource;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,5 +20,5 @@ Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [LoginController::class, 'login']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    return new UserResource($request->user());
 });
