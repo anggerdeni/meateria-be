@@ -18,7 +18,7 @@
             "params": [],
             "bodyParams": [
               {
-                "key": "login",
+                "key": "email",
                 "value": "sherlock@holmes.com"
               },
               {
@@ -26,8 +26,16 @@
                 "value": "IamSHERlock"
               },
               {
-                "key": "login",
+                "key": "confirm_password",
+                "value": "IamSHERlock"
+              },
+              {
+                "key": "username",
                 "value": "sherlock"
+              },
+              {
+                "key": "name",
+                "value": "Sherlock Holmes"
               }
             ],
             "rawParams": "{}",
