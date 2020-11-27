@@ -23,6 +23,7 @@ class RegisterController extends BaseController
             'email' => 'required|unique:users,email',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
+            'profile_picture' => 'nullable|file|image|mimes:jpeg,png,gif,webp|max:2048',
         ]);
 
         if($validator->fails()) {

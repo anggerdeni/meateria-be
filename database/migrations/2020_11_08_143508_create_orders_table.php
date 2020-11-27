@@ -18,11 +18,11 @@ class CreateOrdersTable extends Migration
             $table->enum('status', ['UNPAID', 'PAID', 'PROCESSED', 'CANCELLED', 'ON DELIVERY', 'DELIVERED']);
             $table->float('total_payment', 8, 2);
             $table->unsignedBigInteger('buyer_id');
-            $table->unsignedBigInteger('store_id');
+            $table->unsignedBigInteger('seller_id');
             $table->timestamps();
 
             $table->foreign('buyer_id')->references('id')->on('users');
-            $table->foreign('store_id')->references('id')->on('stores');
+            $table->foreign('seller_id')->references('id')->on('users');
         });
     }
 

@@ -20,10 +20,10 @@ class CreateProductsTable extends Migration
             $table->string('quality');
             $table->float('price', 8, 2);
             $table->unsignedInteger('quantity');
-            $table->unsignedBigInteger('store_id');
+            $table->unsignedBigInteger('seller_id');
             $table->timestamps();
 
-            $table->foreign('store_id')->references('id')->on('stores');
+            $table->foreign('seller_id')->references('id')->on('users');
         });
     }
 
