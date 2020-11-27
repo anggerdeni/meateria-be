@@ -2,10 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\api\UserController;
 use App\Http\Controllers\api\RegisterController;
 use App\Http\Controllers\api\LoginController;
-use App\Http\Controllers\api\UserController;
-use App\Http\Resources\User as UserResource;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,9 +15,15 @@ use App\Http\Resources\User as UserResource;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('register', [RegisterController::class, 'register']);
-Route::post('login', [LoginController::class, 'login']);
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return new UserResource($request->user());
+Route::group(['namespace' => 'api'], function() {
+    Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function() {
+        Route::get('', [UserController::class, 'show']);
+    });
+
+    Route::group(['prefix' => 'auth'], function() {
+        Route::post('register', [RegisterController::class, 'register']);
+        Route::post('login', [LoginController::class, 'login']);
+    });
 });
+

@@ -7,7 +7,7 @@
         "requests": [
           {
             "url": "http://127.0.0.1:40003",
-            "path": "/api/register",
+            "path": "/api/auth/register",
             "method": "POST",
             "auth": "None",
             "httpUser": "",
@@ -36,6 +36,14 @@
               {
                 "key": "name",
                 "value": "Sherlock Holmes"
+              },
+              {
+                "key": "phone",
+                "value": "081234567890"
+              },
+              {
+                "key": "address",
+                "value": "Jalan Panjang"
               }
             ],
             "rawParams": "{}",
@@ -50,7 +58,7 @@
           },
           {
             "url": "http://127.0.0.1:40003",
-            "path": "/api/login",
+            "path": "/api/auth/login",
             "method": "POST",
             "auth": "None",
             "httpUser": "",
