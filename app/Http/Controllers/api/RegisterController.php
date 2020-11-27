@@ -23,6 +23,9 @@ class RegisterController extends BaseController
             'email' => 'required|unique:users,email',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
+            'profile_picture' => 'nullable|file|image|mimes:jpeg,png,gif,webp|max:2048',
+            'phone' => 'required',
+            'address' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -31,11 +34,19 @@ class RegisterController extends BaseController
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
+        $input['profile_picture'] = 'storage/img/default.png';
         $input['balance'] = 0;
         $user = User::create($input);
-        $success['token'] =  $user->createToken('Meateria')->accessToken;
-        $success['name'] =  $user->name;
+        if (!empty($request->file('profile_picture'))) {
+            $image = $request->file('profile_picture');
+            $image->storeAs('public/uploads/profile/' . $user->id . '/', 'profil.jpg');
+            $user->profile_picture = 'storage/uploads/profile/' . $user->id . '/profil.jpg';
+            $user->save();
+            $user->refresh();
+        }
+        $result = $user;
+        $result['token'] =  $user->createToken('Meateria')->accessToken;
 
-        return $this->sendResponse($success, 'User register successfully.');
+        return $this->sendResponse($result, 'User registered successfully.');
     }
 }

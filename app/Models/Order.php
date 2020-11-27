@@ -12,7 +12,7 @@ class Order extends Model
         'status',
         'amount',
         'buyer_id',
-        'store_id'
+        'seller_id'
     ];
 
     public function orderDetails()
