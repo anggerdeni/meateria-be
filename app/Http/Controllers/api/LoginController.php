@@ -17,10 +17,11 @@ class LoginController extends BaseController
     public function login(Request $request)
     {
         if(Auth::attempt(['username' => $request->login, 'password' => $request->password]) || Auth::attempt(['email' => $request->login, 'password' => $request->password])){ 
-            $user = Auth::user(); 
-            $success['token'] =  $user->createToken('MyApp')->accessToken; 
-            $success['name'] =  $user->name;
-            return $this->sendResponse($success, 'Logged in');
+            $user = Auth::user();
+            $result = $user;
+            $result->token = $user->createToken('Meateria')->accessToken;
+
+            return $this->sendResponse($result, $user->createToken('Meateria')->accessToken);
         } else{
             return $this->sendError('Unauthorized.', ['error'=>'Unauthorized']);
         } 

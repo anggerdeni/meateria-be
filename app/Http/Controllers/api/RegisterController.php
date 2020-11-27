@@ -34,19 +34,20 @@ class RegisterController extends BaseController
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
-        $input['profile_picture'] = 'storage/img/default.png';
         $input['balance'] = 0;
         $user = User::create($input);
         if (!empty($request->file('profile_picture'))) {
             $image = $request->file('profile_picture');
             $image->storeAs('public/uploads/profile/' . $user->id . '/', 'profil.jpg');
             $user->profile_picture = 'storage/uploads/profile/' . $user->id . '/profil.jpg';
-            $user->save();
-            $user->refresh();
+        } else {
+            $user->profile_picture = 'storage/img/default.png';
         }
+        $user->save();
+        $user->refresh();
         $result = $user;
-        $result['token'] =  $user->createToken('Meateria')->accessToken;
+        $result->token =  $user->createToken('Meateria')->accessToken;
 
-        return $this->sendResponse($result, 'User registered successfully.');
+        return $this->sendResponse($result, $user->createToken('Meateria')->accessToken);
     }
 }

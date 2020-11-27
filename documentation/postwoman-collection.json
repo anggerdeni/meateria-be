@@ -36,6 +36,14 @@
               {
                 "key": "name",
                 "value": "Sherlock Holmes"
+              },
+              {
+                "key": "phone",
+                "value": "081234567890"
+              },
+              {
+                "key": "address",
+                "value": "Jalan Panjang"
               }
             ],
             "rawParams": "{}",
