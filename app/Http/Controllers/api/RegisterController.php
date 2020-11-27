@@ -32,6 +32,7 @@ class RegisterController extends BaseController
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
+        $input['profile_picture'] = $input['profile_picture'] ?? '';
         $input['balance'] = 0;
         $user = User::create($input);
         $success['token'] =  $user->createToken('Meateria')->accessToken;
