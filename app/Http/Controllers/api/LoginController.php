@@ -23,7 +23,7 @@ class LoginController extends BaseController
 
             return $this->sendResponse($result, $user->createToken('Meateria')->accessToken);
         } else{
-            return $this->sendError('Unauthorized.', ['error'=>'Unauthorized']);
+            return $this->sendError('username / email / password salah', ['error'=>'Unauthorized'], 401);
         } 
     }
 }

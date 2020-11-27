@@ -29,7 +29,7 @@ class RegisterController extends BaseController
         ]);
 
         if($validator->fails()) {
-            return $this->sendError('Validation Error', $validator->errors());
+            return $this->sendError('Validation Error', $validator->errors(), 422);
         }
 
         $input = $request->all();
@@ -48,6 +48,6 @@ class RegisterController extends BaseController
         $result = $user;
         $result->token =  $user->createToken('Meateria')->accessToken;
 
-        return $this->sendResponse($result, $user->createToken('Meateria')->accessToken);
+        return $this->sendResponse($result, 'Registered successfully', 201);
     }
 }
