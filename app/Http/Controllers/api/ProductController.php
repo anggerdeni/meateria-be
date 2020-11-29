@@ -84,6 +84,7 @@ class ProductController extends BaseController
             'type' => 'required|in:ayam,kambing,sapi,domba',
             'price' => 'required|numeric',
             'quantity' => 'required|numeric',
+            'description' => 'required',
             'picture' => 'required|file|image|mimes:jpg,jpeg,png,gif,webp|max:2048',
         ]);
         
@@ -109,12 +110,19 @@ class ProductController extends BaseController
     /**
      * Display the specified resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        $product = new ProductResource(Product::find($id));
+        $user = $request->user();
+        $product = Product::find($id);
+        if($user) {
+            $product->qty_in_cart = $request->user()->carts()->where('product_id', $id)->count();
+        } else {
+            $product->qty_in_cart = 0;
+        }
         return $this->sendResponse($product, 'Data found');
     }
 
@@ -134,6 +142,7 @@ class ProductController extends BaseController
             'type' => 'required|in:ayam,kambing,sapi,domba',
             'price' => 'required|numeric',
             'quantity' => 'required|numeric',
+            'description' => 'required',
             'picture' => 'nullable|file|image|mimes:jpg,jpeg,png,gif,webp|max:2048',
         ]);
         
@@ -165,6 +174,7 @@ class ProductController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

@@ -1,5 +1,5 @@
 #########################################################################################################
-TOKEN='eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDYwN2FhNWU4YjU0MDQwOWJkODIwODI0M2NlYjhlOWY3NmNkNTU5Y2QwMDBjNGI1YmIxNmU4YjMwODc2NTVhN2QzNzc0ZDg1Y2E3YTE0Y2EiLCJpYXQiOjE2MDY2NjQxMDAsIm5iZiI6MTYwNjY2NDEwMCwiZXhwIjoxNjM4MjAwMTAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.JwgzBcAGNuZZ5WcifsutjO3gLoA4tfjLLEaHnfsDPSxzzsGwaWUswJ7tRCk39Lm7kedQQqtWETt2LeUtAx64dLM9ANK1YLMEg7HZaU4qq_i5nwLSVi4UkJEqleqHTGOot2G-ZnFrrSVbqNAC_2nqrMtQv8PfbTGOxvmksGcI_ljcGUE5R_vTObtbJ9jywlhhFubrX-u-SvBxgcKTA5CW-w0VaUI17nO5DVy16iTocmhRj5sHRHQKDw2DUPCv603dXRbOOqUoVjOzd33jQaiYJ2efgEgOuIEwCYaneCukqCj-Nw7aiDkz7HO0QI4Ow2CqlGg0ShagnJo5-BTS76uzq9rsEhQkVWINuaRYi6E6XO_K_OoxDKrPx3nItKasrHX2qQQPa9B4fd-gMpWGN1zF44EBPCWek7HKI10ULpPKAGj-XgvPI11qs6s2QMEnCCkzm_nrxde95ofViRhOrX0zJc1LYQRJuoX0Iy8Tppf_WJ4TA4c5oDNv8bxJMqSdHiQd7vWX5WigT2Xbri7z5nnP_jnnPcp0SQOJoSA3YHAD3ESSsrM9j8eELaTEeLWOhbXhFSNDFMJ2uBS9aW3nIvwFhHdCwxmAm6QUYRNppT58vXo8j3o7HJIrlDkfooi3MOJq53e6s3gQjWhBgazQpijkGDnDMWkFOKK-dlhxaQr41rQ'
+TOKEN='eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjkwZmMyNzVhYTI5ZmQxNTBkNmI5YjkyYjEzNjJjN2U4NGIxYmQ2N2JmOWIyZWEyYTA2ODJhNWU1MDliNzJlNWJlYmM0YmY1MDFjZWMxMjAiLCJpYXQiOjE2MDY2NzA5MTgsIm5iZiI6MTYwNjY3MDkxOCwiZXhwIjoxNjM4MjA2OTE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.kKAUPF2JxJPfruDfZrVGGIi3Ogy1Ai8kIlrqMu78Wg8f11qiZNH0382k3hppCbUvNZvrfGtMyMRtGHzPFXAegfP1j3uQCwjttfCjZwlG1X7qmynQs_ktxnFQgTNR4BhTUrT-_2I0qUP5N_XEC2QO3WR8ujCLOmf65T0l7OPQplGovAGENoCEUWDb1HrNXJiF2IO_wqrmhcBeFuyI2RFXAMcB2LfQ6WGoxxJ-pyyaxVbmya2Ut7lFjj1hxvCbFF80wVvChUMraGkZ_SaKVVRgXiHC13hTMilzfafrQV3YjM04aZgfh80ejEicvLlK5NCwlpGpSX8HbfcFYvtamlgtLdII3q0DHQ22Se6CBLNUdwJaSEgVmH96nCm5gdRHG21zNgIqsNZQ97aMRzmdZvVX60TLV1ODN8RlB94CjNzdLJWpC7AKe4Khl_WbDE7ilGVwxw1EJw2XISWD8jYbCUlI9Uyu_m7fGc8IXuJuNYFWPj7CVPD_R319OLN9wv4WLOd-Ni_IsySiFqdKZe039tRkOz4Ip7bUyV-UvK8ZXqykRde4vtOegi7_wSkmyPIJX8M1c3x6sVA4eCJiCv1zaatHcRub9HGpYFWte_C-LxPXOyp2B5YtVHfGY_W6exNv8VAoaUi5PAEpPePdb2rD8awfeUYfVKCvU9GEvY-MQT8oMT4'
 PICTURE='/home/an0nvi/Pictures/a.png'
 
 #########################################################################################################
@@ -26,7 +26,8 @@ curl -X POST \
   -F "type=kambing" \
   -F "price=50000" \
   -F "quantity=100" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"
 
 curl -X POST \
   'http://127.0.0.1:40003/api/product/store' \
@@ -36,7 +37,8 @@ curl -X POST \
   -F "type=kambing" \
   -F "price=35000" \
   -F "quantity=200" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"
 
 curl -X POST \
   'http://127.0.0.1:40003/api/product/store' \
@@ -46,7 +48,8 @@ curl -X POST \
   -F "type=ayam" \
   -F "price=30000" \
   -F "quantity=100" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"
 
 curl -X POST \
   'http://127.0.0.1:40003/api/product/store' \
@@ -56,7 +59,8 @@ curl -X POST \
   -F "type=ayam" \
   -F "price=10000" \
   -F "quantity=100" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"
 
 curl -X POST \
   'http://127.0.0.1:40003/api/product/store' \
@@ -66,7 +70,8 @@ curl -X POST \
   -F "type=domba" \
   -F "price=70000" \
   -F "quantity=100" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"
 
 curl -X POST \
   'http://127.0.0.1:40003/api/product/store' \
@@ -76,7 +81,8 @@ curl -X POST \
   -F "type=domba" \
   -F "price=60000" \
   -F "quantity=100" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"
 
 curl -X POST \
   'http://127.0.0.1:40003/api/product/store' \
@@ -86,7 +92,8 @@ curl -X POST \
   -F "type=sapi" \
   -F "price=50000" \
   -F "quantity=100" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"
 
 curl -X POST \
   'http://127.0.0.1:40003/api/product/store' \
@@ -96,7 +103,8 @@ curl -X POST \
   -F "type=sapi" \
   -F "price=50000" \
   -F "quantity=100" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"
 
 
 #########################################################################################################
@@ -109,4 +117,5 @@ curl -X POST \
   -F "type=sapi" \
   -F "price=45000" \
   -F "quantity=100" \
-  -F "picture=@$PICTURE"
+  -F "picture=@$PICTURE" \
+  -F "description=something here"

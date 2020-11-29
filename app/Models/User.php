@@ -52,11 +52,11 @@ class User extends Authenticatable
 
     public function products()
     {
-        return $this->hasMany('App\Product', 'id', 'seller_id');
+        return $this->hasMany('App\Models\Product', 'id', 'seller_id');
     }
 
     public function carts()
     {
-        return $this->hasMany('App\Cart', 'buyer_id', 'id');
+        return $this->hasMany('App\Models\Cart', 'buyer_id', 'id');
     }
 }
