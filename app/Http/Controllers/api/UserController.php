@@ -52,7 +52,7 @@ class UserController extends BaseController
         if($product->quantity < $request->quantity) {
             return $this->sendError('Validation Error', ['quantity' => 'Quantity exceeded'], 422);
         } else if($product->seller_id === $user->id) {
-            // return $this->sendError('Validation Error', ['product' => 'You cannot add your own product to cart'], 422);            
+            return $this->sendError('Validation Error', ['product' => 'You cannot add your own product to cart'], 422);            
         }
 
         if($request->quantity > 0) {
