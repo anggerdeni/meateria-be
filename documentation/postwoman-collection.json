@@ -216,7 +216,12 @@
             "bearerToken": "<<user_token>>",
             "headers": [],
             "params": [],
-            "bodyParams": [],
+            "bodyParams": [
+              {
+                "key": "quantity",
+                "value": "10"
+              }
+            ],
             "rawParams": "{}",
             "rawInput": false,
             "contentType": "application/json",
@@ -246,6 +251,65 @@
             "preRequestScript": "",
             "testScript": null,
             "name": "Delete",
+            "collection": 0,
+            "folder": 0
+          }
+        ]
+      },
+      {
+        "name": "Cart",
+        "requests": [
+          {
+            "url": "http://127.0.0.1:40003",
+            "path": "/api/user/cart/1",
+            "method": "POST",
+            "auth": "Bearer Token",
+            "httpUser": "",
+            "httpPassword": "",
+            "passwordFieldType": "password",
+            "bearerToken": "<<user_token>>",
+            "headers": [],
+            "params": [],
+            "bodyParams": [
+              {
+                "key": "quantity",
+                "value": "10"
+              }
+            ],
+            "rawParams": "{}",
+            "rawInput": false,
+            "contentType": "application/json",
+            "requestType": "",
+            "preRequestScript": "",
+            "testScript": null,
+            "name": "Add/Edit cart",
+            "collection": 0,
+            "folder": 0
+          },
+          {
+            "url": "http://127.0.0.1:40003",
+            "path": "/api/user/cart",
+            "method": "GET",
+            "auth": "Bearer Token",
+            "httpUser": "",
+            "httpPassword": "",
+            "passwordFieldType": "password",
+            "bearerToken": "<<user_token>>",
+            "headers": [],
+            "params": [],
+            "bodyParams": [
+              {
+                "key": "quantity",
+                "value": "10"
+              }
+            ],
+            "rawParams": "",
+            "rawInput": true,
+            "contentType": "",
+            "requestType": "",
+            "preRequestScript": "",
+            "testScript": null,
+            "name": "Show cart",
             "collection": 0,
             "folder": 0
           }

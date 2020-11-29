@@ -110,6 +110,7 @@ class ProductController extends BaseController
     /**
      * Display the specified resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -118,9 +119,9 @@ class ProductController extends BaseController
         $user = $request->user();
         $product = Product::find($id);
         if($user) {
-            $product->in_cart = $request->user()->carts()->where('product_id', $id)->count();
+            $product->qty_in_cart = $request->user()->carts()->where('product_id', $id)->count();
         } else {
-            $product->in_cart = 0;
+            $product->qty_in_cart = 0;
         }
         return $this->sendResponse($product, 'Data found');
     }
@@ -173,6 +174,7 @@ class ProductController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

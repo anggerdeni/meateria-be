@@ -20,6 +20,10 @@ use App\Http\Controllers\api\ProductController;
 Route::group(['namespace' => 'api'], function() {
     Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function() {
         Route::get('', [UserController::class, 'show']);
+        Route::group(['prefix' => 'cart'], function() {
+            Route::get('', [UserController::class, 'cart']);
+            Route::post('{productId}', [UserController::class, 'updateCart']);
+        });
     });
 
     Route::group(['prefix' => 'auth'], function() {
