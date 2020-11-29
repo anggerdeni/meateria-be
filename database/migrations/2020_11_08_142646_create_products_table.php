@@ -16,10 +16,11 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('model');
-            $table->string('quality');
+            $table->enum('weight_type', ['kg','ounce']);
+            $table->enum('type', ['kambing','sapi','ayam','domba']);
             $table->float('price', 8, 2);
             $table->unsignedInteger('quantity');
+            $table->text('picture');
             $table->unsignedBigInteger('seller_id');
             $table->timestamps();
 

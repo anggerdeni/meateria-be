@@ -50,9 +50,9 @@ class User extends Authenticatable
         return $this->where('username', $login)->orWhere('email', $login)->first();
     }
 
-    public function stores()
+    public function products()
     {
-        return $this->hasMany('App\Store', 'owner_id', 'id');
+        return $this->hasMany('App\Product', 'id', 'seller_id');
     }
 
     public function carts()

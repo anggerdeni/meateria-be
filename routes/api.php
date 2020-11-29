@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\UserController;
 use App\Http\Controllers\api\RegisterController;
 use App\Http\Controllers\api\LoginController;
+use App\Http\Controllers\api\ProductController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,5 +26,17 @@ Route::group(['namespace' => 'api'], function() {
         Route::post('register', [RegisterController::class, 'register']);
         Route::post('login', [LoginController::class, 'login']);
     });
+
+   Route::group(['prefix' => 'product'], function() {
+       Route::get('', [ProductController::class, 'index']);
+       Route::get('{productId}', [ProductController::class, 'show'])->middleware('isProductExists');
+       Route::group(['middleware' => 'auth:api'], function() {
+           Route::post('store', [ProductController::class, 'store']);
+           Route::group(['prefix' => '{productId}', 'middleware' => 'isProductExists'], function() {
+               Route::post('update', [ProductController::class, 'update']);
+               Route::delete('', [ProductController::class, 'destroy']);
+           });
+       });
+   }); 
 });
 
