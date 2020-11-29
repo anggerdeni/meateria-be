@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->float('price', 8, 2);
             $table->unsignedInteger('quantity');
             $table->text('picture');
+            $table->text('description');
             $table->unsignedBigInteger('seller_id');
             $table->timestamps();
 

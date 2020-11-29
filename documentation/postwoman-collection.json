@@ -16,7 +16,36 @@
             "bearerToken": "",
             "headers": [],
             "params": [],
-            "bodyParams": [],
+            "bodyParams": [
+              {
+                "key": "email",
+                "value": "sherlock@holmes.com"
+              },
+              {
+                "key": "password",
+                "value": "IamSHERlock"
+              },
+              {
+                "key": "confirm_password",
+                "value": "IamSHERlock"
+              },
+              {
+                "key": "username",
+                "value": "sherlock"
+              },
+              {
+                "key": "name",
+                "value": "Sherlock Holmes"
+              },
+              {
+                "key": "phone",
+                "value": "081234567890"
+              },
+              {
+                "key": "address",
+                "value": "Jalan Panjang"
+              }
+            ],
             "rawParams": "{}",
             "rawInput": false,
             "contentType": "application/json",
